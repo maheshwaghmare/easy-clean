@@ -1,0 +1,117 @@
+
+.easy-clean-page .post-type .no-5 ~ div:not(.toggle) {
+    display: none;
+}
+
+.easy-clean-page .post-type > div {
+	line-height: 1.5;
+	margin: 1em 0;
+}
+
+.easy-clean-page .post-type .spinner {
+    float: none;
+    margin: 0;
+}
+
+.easy-clean-page .clean-post-notice {
+    margin-left: 0;
+}
+
+.easy-clean-page .clean-post-notice .post-type {
+    padding: 2px 5px;
+    background: #f1f1f1;
+    font-style: italic;
+}
+.easy-clean-page .clean-post-notice .time {
+	font-style: italic;
+}
+.easy-clean-page .clean-post-notice .user {
+    padding: 2px 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+.easy-clean-page .clean-post-notice .title {
+    padding: 2px 0px;
+    margin-right: .5em;
+    font-weight: 500;
+}
+
+.log-details p {
+    margin: 0;
+}
+
+.log-details {
+    padding: 0px;
+    position: absolute;
+    right: 40px;
+    top: 4px;
+}
+
+.easy-clean-page .post-type .disabled {
+    pointer-events: none;
+}
+.easy-clean-page .toggle a {
+    text-decoration: none;
+}
+.easy-clean-page .actions a {
+    text-decoration: none;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/**
+ * Header
+ */
+.easy-clean-page .header {
+    margin: -8px -20px 1em -20px;
+    background: #fff;
+    padding: 1.5em 1em;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+
+.easy-clean-page .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.easy-clean-page #poststuff {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.easy-clean-page .header h1 {
+    line-height: normal;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.easy-clean-page .version {
+    font-size: small;
+    background: #e5e5e5;
+    padding: 2px 5px;
+    line-height: 0;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.easy-clean-page #post-body-content .post-type-wrap:first-child h3 {
+    margin-top: 0;
+}
+
+.easy-clean-page #post-body-content .post-type-wrap h3 {
+    display: inline-block;
+}
+
+.easy-clean-page #post-body-content .post-type-wrap h3 ~ p {
+    display: inline-block;
+}
+
+.easy-clean-page .no-logs {
+    margin-top: 5em;
+    text-align: center;
+}

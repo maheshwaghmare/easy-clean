@@ -50,7 +50,7 @@ if ( ! class_exists( 'Easy_Clean_Post' ) ) :
 		function register_post_type() {
 
 			/* Logs post type */
-			$log_args = array(
+			$log_args = apply_filters( 'easy_clean_post_type_args', array(
 				'labels'              => array( 'name' => __( 'Logs', 'easy-clean' ) ),
 				'public'              => false,
 				'exclude_from_search' => true,
@@ -61,7 +61,7 @@ if ( ! class_exists( 'Easy_Clean_Post' ) ) :
 				'capability_type'     => 'post',
 				'supports'            => array( 'title', 'custom-fields' ),
 				'can_export'          => true,
-			);
+			));
 
 			register_post_type( 'easy_clean_log', $log_args );
 		}

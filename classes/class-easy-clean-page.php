@@ -57,9 +57,9 @@ if ( ! class_exists( 'Easy_Clean_Page' ) ) :
 		 * @return  array
 		 */
 		function action_links( $links ) {
-			$action_links = array(
+			$action_links = apply_filters( 'easy_clean_action_links', array(
 				'settings' => '<a href="' . admin_url( 'tools.php?page=easy_clean' ) . '" aria-label="' . esc_attr__( 'Get Started', 'easy-clean' ) . '">' . esc_html__( 'Get Started', 'easy-clean' ) . '</a>',
-			);
+			));
 
 			return array_merge( $action_links, $links );
 		}
@@ -254,7 +254,7 @@ if ( ! class_exists( 'Easy_Clean_Page' ) ) :
 			?>
 			<a href="<?php echo admin_url( 'tools.php?page=easy_clean' ); ?>" class="button button-back">Back</a>
 			<?php
-			$args = array(
+			$args = apply_filters( 'easy_clean_delete_log_query_args', array(
 				'post_type'      => 'easy_clean_log',
 
 				// Query performance optimization.
@@ -262,7 +262,7 @@ if ( ! class_exists( 'Easy_Clean_Page' ) ) :
 				'no_found_rows'  => true,
 				'post_status'    => 'any',
 				'posts_per_page' => -1,
-			);
+			));
 
 			$query = new WP_Query( $args );
 			if ( $query->posts ) {
@@ -272,8 +272,8 @@ if ( ! class_exists( 'Easy_Clean_Page' ) ) :
 			} else {
 				?>
 				<div class="no-logs">
-					<h3>No Logs!</h3>
-					<p class="description">Not have any log entries!</p>
+					<h3><?php _e( 'No Logs!', 'easy-clean' ); ?></h3>
+					<p class="description"><?php _e( 'Not have any log entries!', 'easy-clean' ); ?></p>
 				</div>
 				<?php
 			}
@@ -311,8 +311,8 @@ if ( ! class_exists( 'Easy_Clean_Page' ) ) :
 				if ( $query->posts ) {
 					$no_of_posts = count( $query->posts );
 					?>
-					<div class="post-type-wrap post-type-<?php echo $post_type; ?>-wrap">
-						<h3><?php echo $current_post_type->label; ?></h3>
+					<div class="post-type-wrap post-type-<?php echo esc_attr( $post_type ); ?>-wrap">
+						<h3><?php echo esc_html( $current_post_type->label ); ?></h3>
 						<p class="description">
 							<?php
 							/* Translators: %s is the no of found posts count. */
